@@ -17,6 +17,9 @@ provider "kubernetes" {
       "--cluster-name",
       local.cluster_name
     ]
+    env = {
+    AWS_PROFILE = var.aws_profile
+  }
   }
 }
 
@@ -34,6 +37,9 @@ provider "kubectl" {
       "--cluster-name",
       local.cluster_name
     ]
+    env = {
+    AWS_PROFILE = var.aws_profile
+  }
   }
 }
 
@@ -51,6 +57,9 @@ provider "helm" {
         "--cluster-name",
         local.cluster_name
       ]
+      env = {
+        AWS_PROFILE = var.aws_profile
+      }
     }
   }
 }

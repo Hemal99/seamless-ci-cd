@@ -2,6 +2,12 @@ variable "region" {
   type        = string
   description = "The AWS region where resources will be deployed."
 }
+
+variable "aws_profile" {
+  type        = string
+  description = "The AWS profile to use for authentication."
+}
+
 variable "environment" {
   description = ""
 }
