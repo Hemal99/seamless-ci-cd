@@ -19,7 +19,7 @@ export const App = () => {
           <h1>Play 2048</h1>
         </div>
         <div>
-          <Button onClick={handleRestart}>Restart</Button>
+          <Button onClick={handleRestart}>Restart Now</Button>
         </div>
       </div>
       <Game key={date.toISOString()} />
