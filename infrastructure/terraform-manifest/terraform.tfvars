@@ -2,6 +2,7 @@
 region             = "us-east-2"
 availability_zones = ["us-east-2a", "us-east-2b"]
 environment  = "staging"
+account_id = "475882391631"
 
 aws_profile = "wiley-aws-sandbox"
 

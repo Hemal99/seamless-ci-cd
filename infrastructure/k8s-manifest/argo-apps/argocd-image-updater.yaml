@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-image-updater
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: https://argoproj.github.io/argo-helm
+    targetRevision: "0.12.1"
+    chart: argocd-image-updater
+    helm:
+      values: |
+        config:
+          registries:
+            - name: ECR
+              prefix: 475882391631.dkr.ecr.us-east-2.amazonaws.com/react-app-2048-ss-githmin
+              type: ecr
+              awsRegion: us-east-2
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
