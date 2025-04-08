@@ -4,14 +4,10 @@ metadata:
   name: react-app-2048
   namespace: dev
   annotations:
-    # Image list with registry and repository
-    argocd-image-updater.argoproj.io/image-list: react-app-2048=475882391631.dkr.ecr.us-east-2.amazonaws.com/react-app-2048-ss-githmin
-    # Updated to 'newest-build' (formerly 'latest') strategy
-    argocd-image-updater.argoproj.io/react-app-2048.update-strategy: newest-build
-    # Image pull policy
-    argocd-image-updater.argoproj.io/react-app-2048.pull-policy: Always
-    # Write-back method to argocd
-    argocd-image-updater.argoproj.io/write-back-method: argocd
+    # Annotations to be detected by Keel for image update configuration.
+    keel.sh/policy: force
+    keel.sh/match-tag: "true"
+    keel.sh/trigger: poll
 spec:
   replicas: 2
   selector:
