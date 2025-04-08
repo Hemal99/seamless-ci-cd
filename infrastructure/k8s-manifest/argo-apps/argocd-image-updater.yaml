@@ -17,9 +17,9 @@ spec:
         config:
           registries:
             - name: ECR
-              prefix: 475882391631.dkr.ecr.us-east-2.amazonaws.com/react-app-2048-ss-githmin
-              type: ecr
-              awsRegion: us-east-2
+              api_url: https://475882391631.dkr.ecr.us-east-2.amazonaws.com
+              prefix: 475882391631.dkr.ecr.us-east-2.amazonaws.com
+              ping: yes
   syncPolicy:
     automated:
       prune: true

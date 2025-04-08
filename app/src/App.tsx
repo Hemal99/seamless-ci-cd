@@ -16,10 +16,10 @@ export const App = () => {
     <div className="App">
       <div className="header">
         <div>
-          <h1>Play 2048 Hello</h1>
+          <h1>Play 2048 Hello c</h1>
         </div>
         <div>
-          <Button onClick={handleRestart}>Restart Hello</Button>
+          <Button onClick={handleRestart}>Restart Hello updated</Button>
         </div>
       </div>
       <Game key={date.toISOString()} />
