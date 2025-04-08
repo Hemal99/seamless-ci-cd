@@ -3,6 +3,10 @@ kind: Application
 metadata:
   name: argocd-image-updater
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: 475882391631.dkr.ecr.us-east-2.amazonaws.com/react-app-2048-ss-githmin
+    argocd-image-updater.argoproj.io/write-back-method: argocd # or use 'git' if you are using GitOps write-back
+    argocd-image-updater.argoproj.io/image-tag-update-strategy: latest
 spec:
   destination:
     namespace: argocd
