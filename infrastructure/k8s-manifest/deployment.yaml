@@ -18,6 +18,8 @@ spec:
     metadata:
       labels:
         app: react-app
+      annotations:
+        keel.sh/last-updated: "{{ now }}" # <-- This line forces a rollout
     spec:
       containers:
       - name: react-app-container
